@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\shared\FinanceControl.Communication\FinanceControl.Communication.csproj" />
+      <ProjectReference Include="..\..\shared\FinanceControl.Exceptions\FinanceControl.Exceptions.csproj" />
+      <ProjectReference Include="..\FinanceControl.Domain\FinanceControl.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
