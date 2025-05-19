@@ -1,4 +1,5 @@
-﻿using FinanceControl.Communication.Requests;
+﻿using FinanceControl.Application.UseCases.User.Register;
+using FinanceControl.Communication.Requests;
 using FinanceControl.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,8 @@ public class UserController : ControllerBase
     [ProducesResponseType(typeof(ResponseRegisteredUserJson),StatusCodes.Status201Created)]
     public IActionResult Register(RequestRegisterJson request)
     {
-        return Created();
+        var useCase = new RegisterUserUseCase();
+        var result = useCase.Execute(request);
+        return Created(string.Empty,result);
     }
 }
