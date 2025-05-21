@@ -30,4 +30,7 @@
     <data name="INVALID_PASSWORD" xml:space="preserve">
         <value>A senha deve ser maior que seis caracteres</value>
     </data>
+    <data name="UNKNOWN_ERROR" xml:space="preserve">
+        <value>Unknown error</value>
+    </data>
 </root>

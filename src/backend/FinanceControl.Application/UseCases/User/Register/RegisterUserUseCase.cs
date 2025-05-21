@@ -1,5 +1,6 @@
 ﻿using FinanceControl.Communication.Requests;
 using FinanceControl.Communication.Responses;
+using FinanceControl.Exceptions.ExceptionsBase;
 
 namespace FinanceControl.Application.UseCases.User.Register;
 
@@ -22,8 +23,8 @@ public class RegisterUserUseCase
 
         if (result.IsValid == false)
         {
-            var errors = result.Errors.Select(x => x.ErrorMessage);
-            throw new Exception();
+            var errorMessages = result.Errors.Select(e => e.ErrorMessage).ToList();
+            throw new ErrorOnValidationException(errorMessages);
         }
     }
 }
