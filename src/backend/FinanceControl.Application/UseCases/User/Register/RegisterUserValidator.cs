@@ -4,7 +4,7 @@ using FinanceControl.Exceptions;
 
 namespace FinanceControl.Application.UseCases.User.Register;
 
-public class RegisterUserValidator : AbstractValidator<RequestRegisterJson>
+public class RegisterUserValidator : AbstractValidator<RequestRegisterUserJson>
 {
     public RegisterUserValidator()
     {
