@@ -1,4 +1,5 @@
 ﻿using FinanceControl.Application.Services.AutoMapper;
+using FinanceControl.Application.Services.Cryptography;
 using FinanceControl.Communication.Requests;
 using FinanceControl.Communication.Responses;
 using FinanceControl.Exceptions.ExceptionsBase;
@@ -17,6 +18,10 @@ public class RegisterUserUseCase
         }).CreateMapper();
 
         var user = autoMapper.Map<Domain.Entities.User>(request);
+
+        var encryptedPassword = new PasswordEncrypter();
+        
+        user.Password = encryptedPassword.Encrypt(request.Password);
         
         return new ResponseRegisteredUserJson
         {
