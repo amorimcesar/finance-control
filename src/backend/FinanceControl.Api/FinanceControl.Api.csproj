@@ -15,6 +15,7 @@
       <ProjectReference Include="..\..\shared\FinanceControl.Communication\FinanceControl.Communication.csproj" />
       <ProjectReference Include="..\..\shared\FinanceControl.Exceptions\FinanceControl.Exceptions.csproj" />
       <ProjectReference Include="..\FinanceControl.Application\FinanceControl.Application.csproj" />
+      <ProjectReference Include="..\FinanceControl.Infrastructure\FinanceControl.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
