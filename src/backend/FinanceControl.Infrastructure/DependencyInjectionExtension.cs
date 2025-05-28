@@ -11,15 +11,16 @@ namespace FinanceControl.Infrastructure;
 
 public static class DependencyInjectionExtension
 {
-    public static void AddInfrastructure(this IServiceCollection services)
+    public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
+        
         AddRepositories(services);
-        AddDbContext(services);
+        AddDbContext(services, configuration);
     }
 
-    private static void AddDbContext(IServiceCollection services)
+    private static void AddDbContext(IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = "Server=localhost;Port=3307;Database=finance_control;Uid=root;Pwd=root;";
+        var connectionString = configuration.GetConnectionString("Connection");
 
         var serverVersion = new MySqlServerVersion(new Version(8, 4, 3));
 
